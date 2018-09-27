@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th colspan="1">id</th>
-      <th colspan="1">published_at</th>
+      <th colspan="1">publication_status</th>
     </tr>
   </thead>
 
@@ -14,7 +14,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.id %></td>
-        <td><%= article.published_at %></td>
+        <td><%= article.decorate.publication_status %></td>
         <td><%= link_to 'Show', article %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>

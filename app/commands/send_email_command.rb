@@ -13,11 +13,10 @@ class SendEmailCommand
     @commands.each { |command| command.warns.deliver_later }
   end
 end
-
 =begin
-  @send_email_command = SendEmailCommand.new
+@send_email_command = SendEmailCommand.new
 
-  @providers = Provider.all
-  @providers.each { |provider| @send_email_command.add_command(ProviderMailer.with(provider: provider)) }
-  @send_email_command.execute
+@providers = Provider.all
+@providers.each { |provider| @send_email_command.add_command(ProviderMailer.with(provider: provider)) }
+@send_email_command.execute
 =end
